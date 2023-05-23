@@ -5,32 +5,7 @@ const User = require('../models/user');
 const alertMailer = require('../mailer/testmailer');
 const UserController = require("../controllers/users_controller")
 
-
-
-// let strategy = new LocalStrategy(
-//     async function(email,password,done){
-//         let user;
-
-//         try{
-//             user=await UserController.findOneByEmai;(email);
-//             let isMatched = await bcrypt.compare(password,user.password); // check boolea value
-//             if (!isMatched || !user)  {
-//                 console.log("invalid username password");
-//                 return done(null, false)
-//             }
-
-//             console.log(email);
-//             alertMailer.loginAlert(user);
-//             return done(null, user);
-
-//         }
-//         catch(err){
-//             console.log(err);
-//         }
-//     }
-// )
-
-
+ 
 //Authentication using passport
 passport.use(new LocalStrategy({
         usernameField: 'email'

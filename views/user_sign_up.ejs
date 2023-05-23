@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/sign_up.css">
+    <link rel="stylesheet" href="/css/sign_in.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/a18fa9a70e.js" crossorigin="anonymous"></script>
-    
+
 </head>
+
 <body>
-    
-    <div class="c container">
-        <div id="g">
 
+    <div class="main-c container">
+        <div class="main">
 
-            <h1>
-
-                Sign-up
-            </h1>
-
-            <div class="user-sup container">
+            <div class="credentials">
+                <h1>Sign Up</h1>
                 <form action="/users/create" method="post">
-
-                    <input type="text" name="name" placeholder="your name" required>
+                    <input type="text" name="name" placeholder="Enter Name" required>
                     <input type="email" name="email" placeholder="Email" required>
                     <input type="password" name="password" placeholder="Password" required>
-                   
-                    <input type="submit" id="sup-btn" value="Sign Up">
-
+                    <div style="display: flex;align-items: baseline;justify-content: space-between;">
+                        <input type="submit" id="sup-btn" class="btn" value="Sign Up">
+                        <a href="/users/sign-in">Sign-in</a>
+                    </div>
                 </form>
 
-                <p class="gauth">
-                    <i class="fa-solid fa-g"></i>
-                    <a href="/users/auth/google">Google Sign-in/Sign-up</a>
-                </p>
+
             </div>
+            <p class="gauth">
+                <a href="/users/auth/google">
+                    <span><i class="fa fa-google-plus-official" aria-hidden="true"></i>
+                    </span>Google Sign-in/Sign-up</a>
+            </p>
         </div>
     </div>
 
 
     <script>
-        $(document).ready(function (){
+        $(document).ready(function () {
             console.log("signup");
-            $('.signup-h').addClass("active")        })
+            $('.signup-h').addClass("active")
+        })
     </script>
 </body>
+
 </html>

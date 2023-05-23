@@ -1,12 +1,12 @@
-const express=require('express');       
+const express = require('express');
 const cookieParser = require('cookie-parser');
-var expressLayouts = require('express-ejs-layouts');   
+var expressLayouts = require('express-ejs-layouts');
 const port = 8003;
 
 
 
 
-const db=require('./config/mongoose');
+const db = require('./config/mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
@@ -14,12 +14,12 @@ const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo');
 // const MongoStore = require('connect-mongo')(session);
 
-const passportGoogle=require('./config/passport-google-oauth2-strategy')
+const passportGoogle = require('./config/passport-google-oauth2-strategy')
 
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 const bodyParser = require('body-parser');
-const app= express();
+const app = express();
 app.use(express.static('assets'));
 
 // passport.use(strategy);
@@ -39,7 +39,7 @@ app.set('views', './views');
 
 app.use(session({
     name: 'issueTracker',
-    secret:'#skey',
+    secret: '#skey',
     saveUninitialized: false,
     resave: false,
     cookie: {
@@ -51,9 +51,9 @@ app.use(session({
         autoRemove: 'disabled'
 
     },
-    function(err){
-        console.log(err || 'error in connect - mongodb setup ok');
-    }
+        function (err) {
+            console.log(err || 'error in connect - mongodb setup ok');
+        }
     )
 }));
 
@@ -61,7 +61,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 // app.use(expressLayouts);
-
 
 app.use(passport.setAuthenticatedUser)
 
@@ -74,7 +73,7 @@ app.set('layout extractScripts', true);
 
 app.use('/', require('./routes'));
 
-app.listen(port, function(err) {
+app.listen(port, function (err) {
     if (err) {
         console.log(`Error in running the server: ${err}`);
     }

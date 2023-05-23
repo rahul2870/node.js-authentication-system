@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,23 +8,24 @@
     <link rel="stylesheet" href="/css/home.css">
     <title>Home</title>
 </head>
+
 <body>
 
-   
-    
-   
-
     <div class="user-c container">
-        
+
         <div class="data">
             <% if(locals.user){ %>
 
                 <h1>Hey <%= user.name %> Welcome to our site</h1>
                 <div class="user-info">
                     <h2>User info</h2>
-                    <p>Email: <%= user.email %></p>
-                    <p>Name: <%= user.name %></p>
-                    <p><p>Password: **********</p></p>
+                    <p>Email: <%= user.email %>
+                    </p>
+                    <p>Name: <%= user.name %>
+                    </p>
+                    <p>
+                    <p>Password: **********</p>
+                    </p>
                 </div>
 
                 <div class="cp-div">
@@ -31,16 +33,18 @@
                         Change Password
                     </a>
                 </div>
-                
-                
+
+
                 <% } %>
         </div>
     </div>
 
     <script>
-        $(document).ready(function (){
+        $(document).ready(function () {
             console.log("home");
-            $('.home-h').addClass("active")        })
+            $('.home-h').addClass("active")
+        })
     </script>
 </body>
+
 </html>
