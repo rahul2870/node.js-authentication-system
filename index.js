@@ -2,7 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 var expressLayouts = require('express-ejs-layouts');
 const port = 8003;
-
+const path = require('path');
 
 
 
@@ -20,7 +20,8 @@ const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 const bodyParser = require('body-parser');
 const app = express();
-app.use(express.static('assets'));
+
+app.use('/assets/css', express.static(path.join(__dirname, 'assets/css')));
 
 // passport.use(strategy);
 app.use(bodyParser.json());
@@ -32,9 +33,9 @@ app.use(cookieParser());
 
 app.use(expressLayouts);
 
-// setup view engin
+// setup view engin 
 app.set('view engine', 'ejs');
-app.set('views', './views');
+app.set('views', path.join(__dirname, './views'));
 
 
 app.use(session({
