@@ -14,7 +14,7 @@ const devlopment = {
 
     google_client_id: "384536873576-0ab564skteu6kqvmaeaem5madi2mpa4e.apps.googleusercontent.com",
     google_client_secret: "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",
-    google_call_back_url: "http://localhost:8003/users/auth/google/callback",
+    google_call_back_url: "https://node-js-authentication-system.vercel.app/users/auth/google/callback",
 
 
 }
